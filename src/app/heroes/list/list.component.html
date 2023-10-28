@@ -1,0 +1,20 @@
+<!-- EJEMPLO DEL USO DEL *ngFor -->
+
+<h3>Listado de heroes</h3>
+
+<!-- Las referencias locales se ponen con # en los ng-template como nothingWasDeleted -->
+<div *ngIf="deleteHero; else nothingWasDeleted">
+  <h3>Heroe Borrado <small class="text-danger">{{deleteHero}}</small> </h3>
+</div>
+
+
+<ng-template #nothingWasDeleted>
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+
+<button class="btn btn-outline-danger" (click)="removeLastHero()" *ngIf="heroNames.length >0">Borrar ultimo Heroe</button>
+<ul class="mt-2 list-group" >
+  <li class="list-group-item" *ngFor="let name of heroNames">{{name}}</li>
+</ul>
