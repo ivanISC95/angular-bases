@@ -1,0 +1,14 @@
+<h1>DBZ Personajes</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <!-- cuando se mandan parametros o atributos usamos [] del componente padre al hijo -->
+    <!-- cuando emite el componente hijo eventos o atributos usamos () primero el nombre de la
+    variable q emite y despues el metodo que esta en el componente padre -->
+    <app-dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></app-dbz-list>
+  </div>
+  <div class="col">
+    <!-- Cuando queremos escuchar eventos como emision de datos del componente hijo al padre se usan () -->
+    <app-dbz-add-character (onNewCharacter)="onNewCharacter($event)"></app-dbz-add-character>
+  </div>
+</div>
